@@ -12,6 +12,10 @@ from firms_monitor.domain.models import ClassifiedHotspot
 logger = logging.getLogger(__name__)
 
 
+class OccurrenceRepositoryError(RuntimeError):
+    """Arquivo de registro em estado inconsistente (ex.: sem cabeçalho)."""
+
+
 class CsvOccurrenceRepository:
     FIELDNAMES = (
         "id",
@@ -37,24 +41,40 @@ class CsvOccurrenceRepository:
         self._encoding = encoding  # utf-8-sig: acentos abrem corretamente no Excel
 
     def existing_ids(self) -> set[str]:
-        if not self._path.exists():
+        if self._is_blank():
             return set()
         with self._path.open("r", newline="", encoding=self._encoding) as file:
             reader = csv.DictReader(file, delimiter=self._delimiter)
+            self._validate_header(reader.fieldnames)
             return {row["id"] for row in reader if row.get("id")}
 
     def save_many(self, occurrences: Sequence[ClassifiedHotspot]) -> int:
         if not occurrences:
             return 0
         self._path.parent.mkdir(parents=True, exist_ok=True)
-        write_header = not self._path.exists() or self._path.stat().st_size == 0
-        with self._path.open("a", newline="", encoding=self._encoding) as file:
+        # Arquivo inexistente ou "vazio" (só BOM/espaços, ex.: esvaziado no editor) é recriado com cabeçalho.
+        mode = "w" if self._is_blank() else "a"
+        with self._path.open(mode, newline="", encoding=self._encoding) as file:
             writer = csv.DictWriter(file, fieldnames=self.FIELDNAMES, delimiter=self._delimiter)
-            if write_header:
+            if mode == "w":
                 writer.writeheader()
             writer.writerows(self._to_row(o) for o in occurrences)
         logger.info("%d ocorrências registradas em %s", len(occurrences), self._path)
         return len(occurrences)
+
+    def _is_blank(self) -> bool:
+        if not self._path.exists():
+            return True
+        with self._path.open("r", encoding=self._encoding) as file:
+            return not file.read(4096).strip()
+
+    def _validate_header(self, fieldnames: Sequence[str] | None) -> None:
+        # Sem cabeçalho válido não há como deduplicar: falhar é melhor que re-alertar tudo em silêncio.
+        if not fieldnames or "id" not in fieldnames:
+            raise OccurrenceRepositoryError(
+                f"O arquivo {self._path} não possui o cabeçalho esperado (coluna 'id'). "
+                "Corrija o cabeçalho ou apague o arquivo para recriá-lo."
+            )
 
     @staticmethod
     def _to_row(occurrence: ClassifiedHotspot) -> dict[str, object]:
