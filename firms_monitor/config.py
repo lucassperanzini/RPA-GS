@@ -36,6 +36,7 @@ class Settings:
     alert_min_level: RiskLevel = RiskLevel.CRITICO
     min_numeric_confidence: int = 30
     min_frp: float = 0.0
+    territory_filter: str | None = "BR"  # código embutido ("BR"), caminho de GeoJSON, ou None (desligado)
 
     output_csv: Path = Path("data/ocorrencias.csv")
     csv_delimiter: str = ","
@@ -70,6 +71,7 @@ class Settings:
                 alert_min_level=RiskLevel.from_name(get("ALERT_MIN_LEVEL", "CRITICO")),
                 min_numeric_confidence=int(get("MIN_NUMERIC_CONFIDENCE", "30")),
                 min_frp=float(get("MIN_FRP", "0")),
+                territory_filter=get("TERRITORY_FILTER", "BR") or None,
                 output_csv=Path(get("OUTPUT_CSV", "data/ocorrencias.csv")),
                 csv_delimiter=get("CSV_DELIMITER", ",") or ",",
                 log_file=Path(log_file) if log_file else None,

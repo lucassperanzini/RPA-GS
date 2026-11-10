@@ -1,6 +1,13 @@
-from firms_monitor.domain.filters import CompositeFilter, ConfidenceFilter, HotspotFilter, MinFrpFilter
+from firms_monitor.domain.filters import (
+    CompositeFilter,
+    ConfidenceFilter,
+    HotspotFilter,
+    MinFrpFilter,
+    TerritoryFilter,
+)
 from firms_monitor.domain.models import ClassifiedHotspot, FireHotspot, RiskLevel
 from firms_monitor.domain.risk import RiskClassifier, RiskRule
+from firms_monitor.domain.territory import Polygon, Territory
 
 __all__ = [
     "ClassifiedHotspot",
@@ -9,7 +16,10 @@ __all__ = [
     "FireHotspot",
     "HotspotFilter",
     "MinFrpFilter",
+    "Polygon",
     "RiskClassifier",
     "RiskLevel",
     "RiskRule",
+    "Territory",
+    "TerritoryFilter",
 ]

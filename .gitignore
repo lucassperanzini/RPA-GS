@@ -2,8 +2,9 @@
 __pycache__/
 .pytest_cache/
 .venv/
-data/
-logs/
+# "/" no início: só as pastas da raiz (firms_monitor/data/ contém o contorno do Brasil e deve ser versionada)
+/data/
+/logs/
 tests/
 build/
 dist/

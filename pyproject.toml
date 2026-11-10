@@ -23,3 +23,6 @@ firms-monitor = "firms_monitor.cli:main"
 
 [tool.setuptools.packages.find]
 include = ["firms_monitor*"]
+
+[tool.setuptools.package-data]
+"firms_monitor.data" = ["*.geojson"]

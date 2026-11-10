@@ -5,6 +5,7 @@ from __future__ import annotations
 from typing import Iterable, Protocol
 
 from firms_monitor.domain.models import FireHotspot
+from firms_monitor.domain.territory import Territory
 
 
 class HotspotFilter(Protocol):
@@ -38,6 +39,16 @@ class MinFrpFilter:
 
     def accepts(self, hotspot: FireHotspot) -> bool:
         return hotspot.frp >= self._min_frp
+
+
+class TerritoryFilter:
+    """Aceita apenas focos localizados dentro do território informado (ex.: Brasil)."""
+
+    def __init__(self, territory: Territory) -> None:
+        self._territory = territory
+
+    def accepts(self, hotspot: FireHotspot) -> bool:
+        return self._territory.contains(hotspot.longitude, hotspot.latitude)
 
 
 class CompositeFilter:

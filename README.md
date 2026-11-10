@@ -36,8 +36,17 @@ FIRMS_QUERY_MODE=area
 FIRMS_BBOX=-74.0,-34.0,-34.7,5.3   # oeste,sul,leste,norte
 ```
 
-> Por ser um retângulo, podem entrar focos de regiões de países vizinhos. Para monitorar um estado
-> ou região específica, basta ajustar `FIRMS_BBOX`.
+Como o retângulo também cobre países vizinhos, os focos passam por um **filtro de território**
+que mantém apenas os que estão dentro do contorno oficial do Brasil (malha do IBGE, embutida no pacote):
+
+```env
+TERRITORY_FILTER=BR                    # padrão: só Brasil
+TERRITORY_FILTER=C:\mapas\area.geojson # contorno próprio (Polygon/MultiPolygon)
+TERRITORY_FILTER=                      # desligado
+```
+
+Focos fora do território não são gravados nem alertados. O contorno não inclui ilhas oceânicas
+(Fernando de Noronha, Trindade), que já ficam fora do `FIRMS_BBOX` padrão.
 
 ## Arquitetura
 
@@ -46,15 +55,18 @@ firms_monitor/
 ├── domain/                 # Regras de negócio puras (sem I/O)
 │   ├── models.py           # FireHotspot, ClassifiedHotspot, RiskLevel
 │   ├── risk.py             # RiskRule, RiskClassifier
-│   └── filters.py          # ConfidenceFilter, MinFrpFilter, CompositeFilter
+│   ├── filters.py          # ConfidenceFilter, MinFrpFilter, TerritoryFilter, CompositeFilter
+│   └── territory.py        # Polygon, Territory (ponto dentro do polígono, sem dependências)
 ├── application/            # Casos de uso
 │   ├── ports.py            # Interfaces: HotspotProvider, OccurrenceRepository, AlertNotifier
 │   ├── monitor.py          # FireMonitorService (orquestração) + ExecutionReport
 │   └── runner.py           # PeriodicRunner (execução em loop, resiliente a falhas)
 ├── infrastructure/         # Adaptadores concretos
 │   ├── firms/              # queries.py, client.py (HTTP + retry), parser.py (CSV), provider.py
+│   ├── geo/                # GeoJsonTerritoryLoader (lê contornos GeoJSON)
 │   ├── persistence/        # CsvOccurrenceRepository
 │   └── notification/       # LogAlertNotifier, CompositeNotifier
+├── data/brasil.geojson     # Contorno do Brasil (IBGE), embutido no pacote
 ├── presentation/
 │   └── console_formatter.py # Console visual: cores, selos de risco, banner de alerta, resumo em caixa
 ├── config.py               # Settings (variáveis de ambiente / .env)
@@ -116,6 +128,7 @@ desligar ou `FORCE_COLOR=1` para forçar. O arquivo de log não é afetado (text
 | `RISK_MEDIO_FRP` / `RISK_ALTO_FRP` / `RISK_CRITICO_FRP` | `10` / `50` / `100` | Faixas de risco em MW |
 | `ALERT_MIN_LEVEL`         | `CRITICO`               | `BAIXO`, `MEDIO`, `ALTO` ou `CRITICO`        |
 | `MIN_NUMERIC_CONFIDENCE`  | `30`                    | Confiança mínima (sensores numéricos/MODIS)  |
+| `TERRITORY_FILTER`        | `BR`                    | Território aceito (`BR`, caminho GeoJSON ou vazio) |
 | `OUTPUT_CSV`              | `data/ocorrencias.csv`  | Arquivo de registro                          |
 | `LOG_FILE` / `LOG_LEVEL`  | `logs/firms_monitor.log` / `INFO` | Log                                |
 
