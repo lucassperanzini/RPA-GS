@@ -55,8 +55,10 @@ firms_monitor/
 │   ├── firms/              # queries.py, client.py (HTTP + retry), parser.py (CSV), provider.py
 │   ├── persistence/        # CsvOccurrenceRepository
 │   └── notification/       # LogAlertNotifier, CompositeNotifier
+├── presentation/
+│   └── console_formatter.py # Console visual: cores, selos de risco, banner de alerta, resumo em caixa
 ├── config.py               # Settings (variáveis de ambiente / .env)
-├── logging_config.py       # Log em console + arquivo rotativo
+├── logging_config.py       # Log em console (visual) + arquivo rotativo (texto puro)
 └── bootstrap.py            # Composition root (injeção de dependências)
 main.py                     # CLI
 ```
@@ -89,6 +91,12 @@ python main.py --env-file outro.env   # usa outro arquivo de configuração
 
 Códigos de saída: `0` sucesso · `1` erro na API FIRMS · `2` configuração inválida.
 
+### Console
+
+O console mostra cores, selo colorido por nível de risco, banner de alerta e um resumo do ciclo
+com gráfico de barras por nível. As cores são detectadas automaticamente; use `NO_COLOR=1` para
+desligar ou `FORCE_COLOR=1` para forçar. O arquivo de log não é afetado (texto puro).
+
 ### Saídas
 
 | Arquivo                   | Conteúdo                                              |
@@ -112,6 +120,20 @@ Códigos de saída: `0` sucesso · `1` erro na API FIRMS · `2` configuração i
 | `LOG_FILE` / `LOG_LEVEL`  | `logs/firms_monitor.log` / `INFO` | Log                                |
 
 ## Acoplando em outro projeto
+
+O projeto é um pacote Python instalável (`pyproject.toml`). No ambiente do outro projeto:
+
+```bash
+pip install D:\document\RPA-GS                    # a partir da pasta local
+pip install -e D:\document\RPA-GS                 # modo editável: alterações aqui refletem lá
+pip install git+https://github.com/<usuario>/RPA-GS.git   # a partir de um repositório (privado ou não)
+```
+
+O pacote contém apenas o código de `firms_monitor/` — `.env`, `data/` e `logs/` **não** são incluídos.
+Ele é marcado como `Private :: Do Not Upload`, o que faz o PyPI público recusar qualquer envio acidental.
+Após instalar, o comando `firms-monitor` fica disponível (equivalente a `python main.py`).
+
+Uso pelo código:
 
 ```python
 from firms_monitor import Settings, build_fire_monitor

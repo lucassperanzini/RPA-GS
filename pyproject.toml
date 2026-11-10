@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "firms-monitor"
+version = "1.0.0"
+description = "Robô de monitoramento de focos de incêndio (NASA FIRMS) com classificação de risco por FRP."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.31",
+    "python-dotenv>=1.0",
+]
+# Impede envio acidental ao PyPI público (o PyPI rejeita pacotes com este classifier).
+classifiers = ["Private :: Do Not Upload"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+firms-monitor = "firms_monitor.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["firms_monitor*"]
