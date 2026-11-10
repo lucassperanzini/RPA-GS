@@ -17,7 +17,14 @@ class LogAlertNotifier:
         self._level = level
 
     def notify(self, occurrences: Sequence[ClassifiedHotspot]) -> None:
-        self._logger.log(self._level, "ALERTA: %d foco(s) de incêndio com risco elevado detectado(s).", len(occurrences))
+        # O `extra` carrega os dados estruturados para formatadores visuais (console);
+        # a mensagem em texto continua completa para o arquivo de log.
+        self._logger.log(
+            self._level,
+            "ALERTA: %d foco(s) de incêndio com risco elevado detectado(s).",
+            len(occurrences),
+            extra={"alert_count": len(occurrences)},
+        )
         for occurrence in sorted(occurrences, key=lambda o: o.hotspot.frp, reverse=True):
             h = occurrence.hotspot
             self._logger.log(
@@ -31,6 +38,7 @@ class LogAlertNotifier:
                 h.confidence,
                 h.satellite,
                 h.maps_url,
+                extra={"occurrence": occurrence},
             )
 
 

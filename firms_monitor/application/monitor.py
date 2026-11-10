@@ -88,5 +88,5 @@ class FireMonitorService:
             alerts_sent=len(alerts),
             by_level=dict(Counter(c.risk_level for c in classified)),
         )
-        logger.info("Ciclo finalizado: %s", report.summary())
+        logger.info("Ciclo finalizado: %s", report.summary(), extra={"report": report})
         return report
