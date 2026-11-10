@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "firms-monitor"
-version = "1.0.0"
+version = "1.1.0"
 description = "Robô de monitoramento de focos de incêndio (NASA FIRMS) com classificação de risco por FRP."
 readme = "README.md"
 requires-python = ">=3.10"
