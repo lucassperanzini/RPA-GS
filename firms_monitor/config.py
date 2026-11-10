@@ -14,13 +14,17 @@ class ConfigurationError(ValueError):
     pass
 
 
+# Retângulo que envolve o território brasileiro (west, south, east, north).
+BRAZIL_BBOX: tuple[float, float, float, float] = (-74.0, -34.0, -34.7, 5.3)
+
+
 @dataclass(frozen=True, slots=True)
 class Settings:
     map_key: str
     source: str = "VIIRS_NOAA20_NRT"
-    query_mode: str = "country"  # "country" ou "area"
+    query_mode: str = "area"  # "area" (recomendado) ou "country" (endpoint descontinuado pela NASA)
     country_code: str = "BRA"
-    bbox: tuple[float, float, float, float] | None = None  # west, south, east, north
+    bbox: tuple[float, float, float, float] | None = BRAZIL_BBOX  # west, south, east, north
     day_range: int = 1
     base_url: str = "https://firms.modaps.eosdis.nasa.gov/"
     timeout_seconds: float = 60.0
@@ -53,9 +57,9 @@ class Settings:
             return cls(
                 map_key=_required(env, "FIRMS_MAP_KEY"),
                 source=get("FIRMS_SOURCE", "VIIRS_NOAA20_NRT"),
-                query_mode=get("FIRMS_QUERY_MODE", "country").lower(),
+                query_mode=get("FIRMS_QUERY_MODE", "area").lower(),
                 country_code=get("FIRMS_COUNTRY", "BRA").upper(),
-                bbox=_parse_bbox(bbox_raw) if bbox_raw else None,
+                bbox=_parse_bbox(bbox_raw) if bbox_raw else BRAZIL_BBOX,
                 day_range=int(get("FIRMS_DAY_RANGE", "1")),
                 base_url=get("FIRMS_BASE_URL", "https://firms.modaps.eosdis.nasa.gov/"),
                 timeout_seconds=float(get("FIRMS_TIMEOUT_SECONDS", "60")),

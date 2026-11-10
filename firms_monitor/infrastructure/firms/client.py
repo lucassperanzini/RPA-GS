@@ -53,13 +53,19 @@ class FirmsApiClient:
         logger.debug("Consultando FIRMS: %s", url.replace(self._map_key, "***"))
         try:
             response = self._session.get(url, timeout=self._timeout)
-            response.raise_for_status()
         except requests.RequestException as exc:
-            raise FirmsApiError(f"Falha ao consultar a API FIRMS: {exc}".replace(self._map_key, "***")) from exc
+            raise FirmsApiError(self._mask(f"Falha de comunicação com a API FIRMS: {exc}")) from exc
 
         body = response.text.strip()
+        if response.status_code >= 400:
+            raise FirmsApiError(
+                self._mask(f"API FIRMS retornou HTTP {response.status_code}: {body[:200]!r} (url: {url})")
+            )
         # A FIRMS responde erros (ex.: "Invalid MAP_KEY.") com status 200 e texto puro.
         first_line = body.splitlines()[0] if body else ""
         if "latitude" not in first_line.lower():
-            raise FirmsApiError(f"Resposta inesperada da API FIRMS: {body[:200]!r}")
+            raise FirmsApiError(self._mask(f"Resposta inesperada da API FIRMS: {body[:200]!r}"))
         return body
+
+    def _mask(self, text: str) -> str:
+        return text.replace(self._map_key, "***")
