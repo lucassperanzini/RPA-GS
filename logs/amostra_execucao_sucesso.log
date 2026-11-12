@@ -1,0 +1,74 @@
+2026-11-12 18:40:43,846 | INFO     | firms_monitor.application.monitor | Iniciando ciclo de monitoramento.
+2026-11-12 18:40:46,818 | INFO     | firms_monitor.infrastructure.firms.provider | FIRMS retornou 6582 focos (fonte VIIRS_NOAA20_NRT).
+2026-11-12 18:40:47,064 | INFO     | firms_monitor.application.monitor | Focos coletados: 6582 | ativos após filtros: 4093
+2026-11-12 18:40:47,120 | INFO     | firms_monitor.infrastructure.persistence.csv_repository | 4093 ocorrências registradas em data\ocorrencias.csv
+2026-11-12 18:40:47,120 | WARNING  | firms_monitor.alerts | ALERTA: 64 foco(s) de incêndio com risco elevado detectado(s).
+2026-11-12 18:40:47,121 | WARNING  | firms_monitor.alerts | [CRÍTICO] FRP=330.9 MW | 12/11/2026 17:26 UTC | lat=-1.14127 lon=-53.58500 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.14127,-53.585
+2026-11-12 18:40:47,121 | WARNING  | firms_monitor.alerts | [CRÍTICO] FRP=241.3 MW | 12/11/2026 17:26 UTC | lat=-1.14052 lon=-53.58019 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.14052,-53.58019
+2026-11-12 18:40:47,121 | WARNING  | firms_monitor.alerts | [CRÍTICO] FRP=241.3 MW | 12/11/2026 17:26 UTC | lat=-1.13977 lon=-53.57538 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.13977,-53.57538
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [CRÍTICO] FRP=241.3 MW | 12/11/2026 17:26 UTC | lat=-1.13659 lon=-53.58071 | conf=h | sat=N20 | https://www.google.com/maps?q=-1.13659,-53.58071
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [CRÍTICO] FRP=239.5 MW | 12/11/2026 17:19 UTC | lat=-14.75106 lon=-41.11359 | conf=h | sat=N20 | https://www.google.com/maps?q=-14.75106,-41.11359
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [CRÍTICO] FRP=186.0 MW | 12/11/2026 17:26 UTC | lat=-1.12878 lon=-53.58200 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.12878,-53.582
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [CRÍTICO] FRP=186.0 MW | 12/11/2026 17:26 UTC | lat=-1.12801 lon=-53.57707 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.12801,-53.57707
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [CRÍTICO] FRP=129.6 MW | 12/11/2026 17:26 UTC | lat=-1.03998 lon=-53.55220 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.03998,-53.5522
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [CRÍTICO] FRP=127.1 MW | 12/11/2026 17:26 UTC | lat=-1.13902 lon=-53.57054 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.13902,-53.57054
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [CRÍTICO] FRP=127.1 MW | 12/11/2026 17:26 UTC | lat=-1.13824 lon=-53.56553 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.13824,-53.56553
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [CRÍTICO] FRP=127.1 MW | 12/11/2026 17:26 UTC | lat=-1.13509 lon=-53.57104 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.13509,-53.57104
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [CRÍTICO] FRP=124.0 MW | 12/11/2026 17:24 UTC | lat=-3.58629 lon=-45.69236 | conf=n | sat=N20 | https://www.google.com/maps?q=-3.58629,-45.69236
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [CRÍTICO] FRP=120.9 MW | 12/11/2026 17:26 UTC | lat=-1.12893 lon=-53.40179 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.12893,-53.40179
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [CRÍTICO] FRP=120.9 MW | 12/11/2026 17:26 UTC | lat=-1.12575 lon=-53.40745 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.12575,-53.40745
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [CRÍTICO] FRP=117.8 MW | 12/11/2026 17:24 UTC | lat=-3.07032 lon=-50.35309 | conf=n | sat=N20 | https://www.google.com/maps?q=-3.07032,-50.35309
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [CRÍTICO] FRP=115.7 MW | 12/11/2026 17:24 UTC | lat=-8.38672 lon=-62.75999 | conf=n | sat=N20 | https://www.google.com/maps?q=-8.38672,-62.75999
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [CRÍTICO] FRP=115.0 MW | 12/11/2026 17:24 UTC | lat=-3.07202 lon=-50.35408 | conf=n | sat=N20 | https://www.google.com/maps?q=-3.07202,-50.35408
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [CRÍTICO] FRP=105.2 MW | 12/11/2026 17:26 UTC | lat=-1.39361 lon=-54.99628 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.39361,-54.99628
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [CRÍTICO] FRP=104.6 MW | 12/11/2026 17:24 UTC | lat=-2.28631 lon=-50.50625 | conf=n | sat=N20 | https://www.google.com/maps?q=-2.28631,-50.50625
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [CRÍTICO] FRP=102.9 MW | 12/11/2026 17:26 UTC | lat=0.56515 lon=-51.76696 | conf=n | sat=N20 | https://www.google.com/maps?q=0.56515,-51.76696
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [ALTO] FRP=96.8 MW | 12/11/2026 15:43 UTC | lat=-5.12155 lon=-38.78226 | conf=n | sat=N20 | https://www.google.com/maps?q=-5.12155,-38.78226
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [ALTO] FRP=92.6 MW | 12/11/2026 17:26 UTC | lat=-1.71301 lon=-56.00967 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.71301,-56.00967
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [ALTO] FRP=91.7 MW | 12/11/2026 17:24 UTC | lat=-3.58897 lon=-55.43642 | conf=n | sat=N20 | https://www.google.com/maps?q=-3.58897,-55.43642
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [ALTO] FRP=88.3 MW | 12/11/2026 17:26 UTC | lat=-1.39297 lon=-54.99215 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.39297,-54.99215
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [ALTO] FRP=88.3 MW | 12/11/2026 17:26 UTC | lat=-1.39234 lon=-54.98802 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.39234,-54.98802
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [ALTO] FRP=86.5 MW | 12/11/2026 17:26 UTC | lat=1.50816 lon=-60.70560 | conf=n | sat=N20 | https://www.google.com/maps?q=1.50816,-60.7056
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [ALTO] FRP=86.5 MW | 12/11/2026 17:26 UTC | lat=1.51159 lon=-60.70610 | conf=n | sat=N20 | https://www.google.com/maps?q=1.51159,-60.7061
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [ALTO] FRP=85.9 MW | 12/11/2026 17:24 UTC | lat=-5.43705 lon=-43.44849 | conf=h | sat=N20 | https://www.google.com/maps?q=-5.43705,-43.44849
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [ALTO] FRP=84.6 MW | 12/11/2026 17:24 UTC | lat=-3.58552 lon=-55.43693 | conf=n | sat=N20 | https://www.google.com/maps?q=-3.58552,-55.43693
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [ALTO] FRP=84.2 MW | 12/11/2026 17:26 UTC | lat=-1.68834 lon=-55.15225 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.68834,-55.15225
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [ALTO] FRP=82.3 MW | 12/11/2026 15:43 UTC | lat=-4.75891 lon=-39.36926 | conf=n | sat=N20 | https://www.google.com/maps?q=-4.75891,-39.36926
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [ALTO] FRP=82.3 MW | 12/11/2026 15:43 UTC | lat=-4.75815 lon=-39.36409 | conf=n | sat=N20 | https://www.google.com/maps?q=-4.75815,-39.36409
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [ALTO] FRP=79.5 MW | 12/11/2026 17:24 UTC | lat=-3.34805 lon=-50.03251 | conf=n | sat=N20 | https://www.google.com/maps?q=-3.34805,-50.03251
+2026-11-12 18:40:47,122 | WARNING  | firms_monitor.alerts | [ALTO] FRP=78.9 MW | 12/11/2026 17:26 UTC | lat=-1.46222 lon=-55.21099 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.46222,-55.21099
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=77.1 MW | 12/11/2026 17:24 UTC | lat=-5.63435 lon=-50.04494 | conf=n | sat=N20 | https://www.google.com/maps?q=-5.63435,-50.04494
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=71.0 MW | 12/11/2026 17:24 UTC | lat=-3.09178 lon=-51.07254 | conf=n | sat=N20 | https://www.google.com/maps?q=-3.09178,-51.07254
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=71.0 MW | 12/11/2026 17:24 UTC | lat=-3.09104 lon=-51.06806 | conf=n | sat=N20 | https://www.google.com/maps?q=-3.09104,-51.06806
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=70.8 MW | 12/11/2026 17:24 UTC | lat=-3.34782 lon=-50.03494 | conf=n | sat=N20 | https://www.google.com/maps?q=-3.34782,-50.03494
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=70.2 MW | 12/11/2026 17:24 UTC | lat=-5.43330 lon=-43.45173 | conf=n | sat=N20 | https://www.google.com/maps?q=-5.4333,-43.45173
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=69.7 MW | 12/11/2026 15:41 UTC | lat=-10.89681 lon=-38.00840 | conf=n | sat=N20 | https://www.google.com/maps?q=-10.89681,-38.0084
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=69.6 MW | 12/11/2026 17:26 UTC | lat=1.50562 lon=-60.70125 | conf=n | sat=N20 | https://www.google.com/maps?q=1.50562,-60.70125
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=69.6 MW | 12/11/2026 17:26 UTC | lat=1.50849 lon=-60.70549 | conf=n | sat=N20 | https://www.google.com/maps?q=1.50849,-60.70549
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=69.4 MW | 12/11/2026 17:21 UTC | lat=-11.97145 lon=-46.41411 | conf=n | sat=N20 | https://www.google.com/maps?q=-11.97145,-46.41411
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=67.8 MW | 12/11/2026 17:24 UTC | lat=-3.68684 lon=-59.18853 | conf=n | sat=N20 | https://www.google.com/maps?q=-3.68684,-59.18853
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=64.5 MW | 12/11/2026 17:24 UTC | lat=-3.58440 lon=-45.69469 | conf=n | sat=N20 | https://www.google.com/maps?q=-3.5844,-45.69469
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=64.3 MW | 12/11/2026 17:24 UTC | lat=-3.87335 lon=-44.99969 | conf=h | sat=N20 | https://www.google.com/maps?q=-3.87335,-44.99969
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=63.1 MW | 12/11/2026 15:43 UTC | lat=-3.32063 lon=-42.80105 | conf=n | sat=N20 | https://www.google.com/maps?q=-3.32063,-42.80105
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=63.1 MW | 12/11/2026 15:43 UTC | lat=-3.32003 lon=-42.79683 | conf=n | sat=N20 | https://www.google.com/maps?q=-3.32003,-42.79683
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=62.2 MW | 12/11/2026 15:43 UTC | lat=-4.75874 lon=-39.36225 | conf=n | sat=N20 | https://www.google.com/maps?q=-4.75874,-39.36225
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=62.0 MW | 12/11/2026 17:26 UTC | lat=-1.44422 lon=-55.92044 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.44422,-55.92044
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=60.9 MW | 12/11/2026 15:43 UTC | lat=-5.10760 lon=-38.87836 | conf=n | sat=N20 | https://www.google.com/maps?q=-5.1076,-38.87836
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=60.0 MW | 12/11/2026 17:26 UTC | lat=-1.13346 lon=-53.58626 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.13346,-53.58626
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=60.0 MW | 12/11/2026 17:26 UTC | lat=-1.12956 lon=-53.58695 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.12956,-53.58695
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=57.9 MW | 12/11/2026 17:24 UTC | lat=-3.26810 lon=-44.44516 | conf=n | sat=N20 | https://www.google.com/maps?q=-3.2681,-44.44516
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=55.5 MW | 12/11/2026 17:26 UTC | lat=1.74511 lon=-50.60665 | conf=n | sat=N20 | https://www.google.com/maps?q=1.74511,-50.60665
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=54.6 MW | 12/11/2026 17:24 UTC | lat=-3.42235 lon=-43.94820 | conf=n | sat=N20 | https://www.google.com/maps?q=-3.42235,-43.9482
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=53.2 MW | 12/11/2026 17:24 UTC | lat=-7.15840 lon=-46.70662 | conf=n | sat=N20 | https://www.google.com/maps?q=-7.1584,-46.70662
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=52.7 MW | 12/11/2026 17:26 UTC | lat=-1.65191 lon=-52.06503 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.65191,-52.06503
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=52.2 MW | 12/11/2026 17:26 UTC | lat=-1.35677 lon=-52.58518 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.35677,-52.58518
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=52.2 MW | 12/11/2026 17:26 UTC | lat=-1.35620 lon=-52.58145 | conf=n | sat=N20 | https://www.google.com/maps?q=-1.3562,-52.58145
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=52.1 MW | 12/11/2026 17:24 UTC | lat=-3.74019 lon=-52.31343 | conf=n | sat=N20 | https://www.google.com/maps?q=-3.74019,-52.31343
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=51.1 MW | 12/11/2026 15:43 UTC | lat=-4.34313 lon=-44.73649 | conf=n | sat=N20 | https://www.google.com/maps?q=-4.34313,-44.73649
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=50.8 MW | 12/11/2026 15:43 UTC | lat=-2.86617 lon=-45.53894 | conf=n | sat=N20 | https://www.google.com/maps?q=-2.86617,-45.53894
+2026-11-12 18:40:47,123 | WARNING  | firms_monitor.alerts | [ALTO] FRP=50.4 MW | 12/11/2026 17:24 UTC | lat=-5.43211 lon=-43.44509 | conf=n | sat=N20 | https://www.google.com/maps?q=-5.43211,-43.44509
+2026-11-12 18:40:47,124 | INFO     | firms_monitor.application.monitor | Ciclo finalizado: coletados=6582 | ativos=4093 | novos=4093 | alertas=64 | níveis[Baixo=3233, Médio=796, Alto=44, Crítico=20] | duração=3.3s
+2026-11-12 18:40:47,402 | INFO     | firms_monitor.application.monitor | Iniciando ciclo de monitoramento.
+2026-11-12 18:40:49,151 | INFO     | firms_monitor.infrastructure.firms.provider | FIRMS retornou 6582 focos (fonte VIIRS_NOAA20_NRT).
+2026-11-12 18:40:49,399 | INFO     | firms_monitor.application.monitor | Focos coletados: 6582 | ativos após filtros: 4093
+2026-11-12 18:40:49,432 | INFO     | firms_monitor.application.monitor | Ciclo finalizado: coletados=6582 | ativos=4093 | novos=0 | alertas=0 | níveis[nenhum] | duração=2.0s

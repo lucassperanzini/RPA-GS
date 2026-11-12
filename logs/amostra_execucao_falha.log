@@ -1,0 +1,2 @@
+2026-11-12 18:40:49,718 | INFO     | firms_monitor.application.monitor | Iniciando ciclo de monitoramento.
+2026-11-12 18:40:50,672 | ERROR    | firms_monitor | API FIRMS retornou HTTP 400: 'Invalid MAP_KEY.' (url: https://firms.modaps.eosdis.nasa.gov/api/area/csv/***/VIIRS_NOAA20_NRT/-74.0,-34.0,-34.7,5.3/1)

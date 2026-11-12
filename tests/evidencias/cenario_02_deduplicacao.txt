@@ -1,0 +1,17 @@
+18:40:47  • monitor    Iniciando ciclo de monitoramento.
+18:40:49  • firms      FIRMS retornou 6582 focos (fonte VIIRS_NOAA20_NRT).
+18:40:49  • monitor    Focos coletados: 6582 | ativos após filtros: 4093
+
+╭─ Resumo do ciclo · 18:40:49 ───────────╮
+│ Coletados  6582                        │
+│ Ativos     4093                        │
+│ Novos      0                           │
+│ Alertas    0                           │
+│ Duração    2.0s                        │
+│                                        │
+│ Baixo         0                        │
+│ Médio         0                        │
+│ Alto          0                        │
+│ Crítico       0                        │
+╰────────────────────────────────────────╯
+exit=0

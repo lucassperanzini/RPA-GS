@@ -1,0 +1,3 @@
+18:40:49  • monitor    Iniciando ciclo de monitoramento.
+18:40:50  ✖ main       API FIRMS retornou HTTP 400: 'Invalid MAP_KEY.' (url: https://firms.modaps.eosdis.nasa.gov/api/area/csv/***/VIIRS_NOAA20_NRT/-74.0,-34.0,-34.7,5.3/1)
+exit=1

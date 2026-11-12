@@ -2,10 +2,13 @@
 __pycache__/
 .pytest_cache/
 .venv/
-# "/" no início: só as pastas da raiz (firms_monitor/data/ contém o contorno do Brasil e deve ser versionada)
-/data/
-/logs/
-tests/
 build/
 dist/
 *.egg-info/
+
+# Dados gerados pelo robô (cada execução/projeto tem os seus).
+# O "/" no início limita à raiz: src/firms_monitor/data/ (contorno do Brasil) é versionada.
+/data/
+
+# Log real de execução não é versionado; as amostras em logs/ (sem dados sensíveis) são.
+/logs/firms_monitor.log*
