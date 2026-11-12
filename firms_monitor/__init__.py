@@ -14,4 +14,4 @@ __all__ = [
     "build_fire_monitor",
 ]
 
-__version__ = "1.1.0"
+__version__ = "1.2.0"

@@ -39,6 +39,8 @@ class FirmsCsvParser:
             brightness=self._parse_brightness(row),
             source=source,
             country=(row.get("country_id") or "").strip() or None,
+            scan=self._parse_optional_float(row.get("scan")),
+            track=self._parse_optional_float(row.get("track")),
         )
 
     @staticmethod
@@ -53,3 +55,9 @@ class FirmsCsvParser:
             if value not in (None, ""):
                 return float(value)
         return None
+
+    @staticmethod
+    def _parse_optional_float(value: str | None) -> float | None:
+        if value is None or not value.strip():
+            return None
+        return float(value)

@@ -52,6 +52,8 @@ class FireHotspot:
     brightness: float | None
     source: str
     country: str | None = None
+    scan: float | None = None   # largura do pixel do satélite, em km (coluna "scan" da FIRMS)
+    track: float | None = None # altura do pixel do satélite, em km (coluna "track" da FIRMS)
 
     @property
     def hotspot_id(self) -> str:

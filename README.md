@@ -146,31 +146,3 @@ O pacote contém apenas o código de `firms_monitor/` — `.env`, `data/` e `log
 Ele é marcado como `Private :: Do Not Upload`, o que faz o PyPI público recusar qualquer envio acidental.
 Após instalar, o comando `firms-monitor` fica disponível (equivalente a `python main.py`).
 
-Uso pelo código:
-
-```python
-from firms_monitor import Settings, build_fire_monitor
-
-report = build_fire_monitor(Settings.from_env()).run()
-print(report.summary())
-```
-
-Para enviar alertas por outro canal (voz, e-mail, Telegram, assistente pessoal...), basta criar uma
-classe com o método `notify()` e injetá-la:
-
-```python
-from firms_monitor import PeriodicRunner
-from firms_monitor.infrastructure.notification import CompositeNotifier, LogAlertNotifier
-
-class MeuNotifier:
-    def notify(self, occurrences):
-        maior = max(occurrences, key=lambda o: o.hotspot.frp)
-        print(f"{len(occurrences)} foco(s) de risco elevado; maior FRP {maior.hotspot.frp:.0f} MW")
-
-notifier = CompositeNotifier([LogAlertNotifier(), MeuNotifier()])
-service = build_fire_monitor(Settings.from_env(), notifier=notifier)
-PeriodicRunner(service, interval_seconds=30 * 60).run_forever()
-```
-
-Da mesma forma, `build_fire_monitor(settings, repository=...)` aceita outro repositório
-(banco de dados, planilha etc.) que implemente `existing_ids()` e `save_many()`.
