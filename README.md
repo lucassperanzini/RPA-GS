@@ -8,14 +8,6 @@ automaticamente as ocorrências críticas e gera um relatório consolidado ao fi
 O robô é integrado ao **MVP Merlin**, um assistente de voz que fala o alerta e direciona o usuário
 para um mapa com os focos de calor.
 
-## Integrantes
-
-| Nome completo | RM |
-|---|---|
-| [Lucas Pisaneschi Speranzini] | [98297] |
-| [João Pedro de Souza Vieira] | [] |
-
-
 
 ## Estrutura do repositório
 
