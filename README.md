@@ -12,16 +12,10 @@ para um mapa com os focos de calor.
 
 | Nome completo | RM |
 |---|---|
-| [preencher] | [preencher] |
-| [preencher] | [preencher] |
-| [preencher] | [preencher] |
+| [Lucas Pisaneschi Speranzini] | [98297] |
+| [João Pedro de Souza Vieira] | [] |
 
-## Links
 
-- Relatório técnico (PDF): [`Global_Solution_RPA_Relatorio_Tecnico.pdf`](Global_Solution_RPA_Relatorio_Tecnico.pdf)
-- Vídeo demonstrativo: [preencher link do vídeo]
-- Repositório: [preencher link do repositório]
-- NASA FIRMS API: https://firms.modaps.eosdis.nasa.gov/api/
 
 ## Estrutura do repositório
 
@@ -218,7 +212,7 @@ pip install -e D:\document\RPA-GS                 # desenvolvimento: alteraçõe
 pip install git+<link do repositório>             # a partir do repositório
 ```
 
-O pacote contém apenas o código de `src/firms_monitor/` (incluindo o contorno do Brasil). O `.env` e as
+O pacote contém apenas o código de `src/firms_monitor/`  O `.env` e as
 pastas `data/` e `logs/` **não** são incluídos — cada projeto que usa o pacote tem seus próprios dados.
 
 ### Compartilhando uma versão fixa (`.whl`)
