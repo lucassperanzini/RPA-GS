@@ -1,6 +1,5 @@
 # FIRMS Monitor – Monitoramento Automatizado de Incêndios com Dados da NASA FIRMS
 
-Global Solution · Robotic Process Automation (RPA) · FIAP · Turma 4ESPY
 
 Robô em Python que consome a API **NASA FIRMS**, identifica focos de incêndio ativos no Brasil,
 classifica o risco pelo **FRP (Fire Radiative Power)**, registra as ocorrências em CSV, notifica
